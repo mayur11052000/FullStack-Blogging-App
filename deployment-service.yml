@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: bloggingapp
-          image: nginx
+          image: mayur11052000/mayurblog13:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
