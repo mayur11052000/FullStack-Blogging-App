@@ -22,21 +22,14 @@ spec:
         - name: regcred # Reference to the Docker registry secret
         
 ---
-
-
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    argocd.argoproj.io/tracking-id: mayur2:/Service:guestbook/bloggingappsvc
-  name: bloggingappsvc
-  namespace: guestbook
+  name: bloggingapp-ssvc
 spec:
-  ports:
-    - port: 80
-      protocol: TCP
-      targetPort: 8080
   selector:
     app: bloggingapp
-  type: LoadBalancer
-
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 8080
