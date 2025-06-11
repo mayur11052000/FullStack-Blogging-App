@@ -27,12 +27,16 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: mayur2:/Service:guestbook/bloggingappsvc
   name: bloggingappsvc
+  namespace: guestbook
 spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
   selector:
     app: bloggingapp
-  ports:
-    - protocol: "TCP"
-      port: 80
-      targetPort: 8080 
   type: LoadBalancer
+
