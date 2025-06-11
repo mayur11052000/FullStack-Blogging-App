@@ -22,6 +22,8 @@ spec:
         - name: regcred # Reference to the Docker registry secret
         
 ---
+
+
 apiVersion: v1
 kind: Service
 metadata:
